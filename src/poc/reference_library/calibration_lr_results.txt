@@ -1,0 +1,11 @@
+CALIBRATION & LIKELIHOOD-RATIO ANALYSIS on the co-processed atlas
+65 runs | groups(batch_id)=65 | classes: column_phosphoramidite:58, photolithographic:3, array_electrochem:2, array_deposition:2
+
+[4-class] balanced accuracy = 1.000  (chance 0.25) | max-confidence ECE = 0.053
+
+[Exclusion: commercial column vs not]  ECE(P_column) = 0.048 | prior=0.89
+  true COLUMN     (n=58): median log10 LR = +1.68  (LR≈48.2×) → inclusion
+  true NON-column (n=7): median log10 LR = -1.33  (LR≈0.047×) → EXCLUSION (rules out column)
+  exclusion power: 100% of non-column runs give LR<1 (evidence against 'commercial column')
+
+wrote figure: /sessions/hopeful-wonderful-ramanujan/mnt/synthesis-screening-project/figures/fig4_8_calibration.png

@@ -1,0 +1,78 @@
+REAL multiclass attribution on the co-processed atlas
+/mnt/c/Users/diden/ERA/DIY_DNA_Synthesis/synthesis-screening-project/src/poc/reference_library/reference_atlas.csv
+atlas: 65 runs x 16 shared features | N_EST=200 N_PERM=100
+
+========================================================================
+TASK A - cross-chemistry multiclass (REAL data; leave-one-run-out)
+========================================================================
+n runs = 65  |  group = batch_id (65 groups)
+classes: array_deposition:2, array_electrochem:2, column_phosphoramidite:58, photolithographic:3
+
+accuracy          = 1.000  (majority baseline 0.892)
+balanced accuracy = 1.000  <-- headline (chance 0.250)
+macro-F1          = 1.000
+ECE               = 0.069
+per-class recall: array_deposition=1.00(n2)  array_electrochem=1.00(n2)  column_phosphoramidite=1.00(n58)  photolithographic=1.00(n3)
+confusion (rows=true, cols=pred): array_deposition | array_electrochem | column_phosphoramidite | photolithographic
+   array_deposition          2    0    0    0
+   array_electrochem         0    2    0    0
+   column_phosphoramidite    0    0   58    0
+   photolithographic         0    0    0    3
+label-shuffle null bal-acc: mean 0.236 (95th 0.379);  permutation p = 0.0099  [100 shuffles]
+
+========================================================================
+TASK B - manufacturer 4-vendor (leave-one-LOT-out)
+========================================================================
+n runs = 24  |  group = lot (8 groups)
+classes: BioSearch:3, Eurofins:3, IDT:9, Sigma:9
+
+accuracy          = 0.292  (majority baseline 0.375)
+balanced accuracy = 0.194  <-- headline (chance 0.250)
+macro-F1          = 0.184
+ECE               = 0.298
+per-class recall: BioSearch=0.00(n3)  Eurofins=0.00(n3)  IDT=0.00(n9)  Sigma=0.78(n9)
+confusion (rows=true, cols=pred): BioSearch | Eurofins | IDT | Sigma
+   BioSearch                 0    0    3    0
+   Eurofins                  2    0    1    0
+   IDT                       6    0    0    3
+   Sigma                     0    0    2    7
+label-shuffle null bal-acc: mean 0.226 (95th 0.390);  permutation p = 0.5644  [100 shuffles]
+
+========================================================================
+TASK B' - IDT vs Sigma near-neighbour (leave-one-LOT-out)
+========================================================================
+n runs = 18  |  group = lot (6 groups)
+classes: IDT:9, Sigma:9
+
+accuracy          = 0.722  (majority baseline 0.500)
+balanced accuracy = 0.722  <-- headline (chance 0.500)
+macro-F1          = 0.721
+ECE               = 0.160
+per-class recall: IDT=0.67(n9)  Sigma=0.78(n9)
+confusion (rows=true, cols=pred): IDT | Sigma
+   IDT                       6    3
+   Sigma                     2    7
+label-shuffle null bal-acc: mean 0.436 (95th 0.667);  permutation p = 0.0495  [100 shuffles]
+
+========================================================================
+TASK C - capping Ac2O vs Pac2O (leave-one-run-out)
+========================================================================
+n runs = 31  |  group = batch_id (31 groups)
+classes: Ac2O_standard:24, Pac2O:7
+
+accuracy          = 1.000  (majority baseline 0.774)
+balanced accuracy = 1.000  <-- headline (chance 0.500)
+macro-F1          = 1.000
+ECE               = 0.047
+per-class recall: Ac2O_standard=1.00(n24)  Pac2O=1.00(n7)
+confusion (rows=true, cols=pred): Ac2O_standard | Pac2O
+   Ac2O_standard            24    0
+   Pac2O                     0    7
+label-shuffle null bal-acc: mean 0.468 (95th 0.652);  permutation p = 0.0099  [100 shuffles]
+
+SUMMARY. Cross-chemistry attribution is essentially perfect (100% balanced 
+accuracy) and robust -- the classes differ by orders of magnitude in deletion 
+rate. Within-column vendor attribution is HARD under honest leave-one-lot-out: 
+the 4-vendor task is data-limited (Eurofins/BioSearch have one lot each) and 
+near-neighbour IDT-vs-Sigma is only ~0.67. The earlier '75% four-vendor' figure 
+used leave-one-RUN-out, which leaks lot replicates -- use lot-level grouping.

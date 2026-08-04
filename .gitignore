@@ -1,0 +1,30 @@
+# --- Python environments / caches ---
+.venv/
+.venv-1/
+__pycache__/
+*.pyc
+
+# --- editor / OS lock & temp files ---
+*.tmp
+.~lock.*
+wget-log
+
+# --- redundant local backups ---
+*.bak
+*.bak2
+*.stale_bak
+
+# --- raw sequencing data + pipeline intermediates ---
+# These regenerate from public accessions via src/poc/acquisition/*.sh
+# (Masaki DRA013805, Filges PRJNA727098, Lietard PRJEB43002, Gimpel PRJEB65931).
+# Kept out of the repo: too large, and already archived publicly.
+src/poc/acquisition/*_out/
+*.fq
+*.fastq
+*.fastq.gz
+*.bam
+*.bai
+*.sam
+
+# --- large image dump from an earlier chapter build ---
+chapter4/_media/

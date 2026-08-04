@@ -1,0 +1,5 @@
+study,repository,study_accession,route_class(n),n_runs,run_id_range,chemistry,umi_consensus
+filges,NCBI SRA,PRJNA727098,column_phosphoramidite:24,24,SRR14416331..SRR14416417,column phosphoramidite; 4 vendors (IDT/Sigma/Eurofins/BioSearch),yes
+gimpel,ENA,PRJEB65931,array_electrochem:2; array_deposition:2,4,ERR12033803..ERR12033809,array: electrochemical (GenScript/CustomArray) + material-deposition (Twist),no (data-storage pool; class-level rates only)
+lietard,ENA,PRJEB43002,photolithographic:3,3,ERR5265252..ERR5265254,light-directed photolithographic array (NPPOC),no (data-storage pool; class-level rates only)
+masaki,DDBJ DRA,DRA013805,column_phosphoramidite:34,34,DRR357663..DRR357696,column phosphoramidite; capping-chemistry panel (Ac2O/Pac2O + non-canonical dG),yes

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" height="400" viewBox="0 0 680 400" font-family="Arial, Helvetica, sans-serif">
+<style>
+  .t{font-size:14px;fill:#1f2937}.ts{font-size:12px;fill:#5b6570}.th{font-size:14px;font-weight:600;fill:#1f2937}
+  .gt{fill:#1f6b3a}.at{fill:#8a5a12}
+</style>
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="#6b7280" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></marker></defs>
+<rect width="680" height="400" fill="#ffffff"/>
+<g>
+<rect x="40" y="50" width="135" height="52" rx="8" fill="#eef1f4" stroke="#c7ced6"/><text class="th" x="107" y="74" text-anchor="middle">Upstream inputs</text><text class="ts" x="107" y="90" text-anchor="middle">nucleosides, CPG</text>
+<rect x="195" y="50" width="135" height="52" rx="8" fill="#eef1f4" stroke="#c7ced6"/><text class="th" x="262" y="74" text-anchor="middle">Amidite makers</text><text class="ts" x="262" y="90" text-anchor="middle">~12 global firms</text>
+<rect x="350" y="50" width="135" height="52" rx="8" fill="#eef1f4" stroke="#c7ced6"/><text class="th" x="417" y="74" text-anchor="middle">Distributors</text><text class="ts" x="417" y="90" text-anchor="middle">catalog + CoA</text>
+<rect x="505" y="50" width="135" height="52" rx="8" fill="#eef1f4" stroke="#c7ced6"/><text class="th" x="572" y="74" text-anchor="middle">End users</text><text class="ts" x="572" y="90" text-anchor="middle">screened + DIY</text>
+</g>
+<g stroke="#6b7280" stroke-width="1.5" marker-end="url(#ar)"><line x1="176" y1="76" x2="192" y2="76"/><line x1="331" y1="76" x2="347" y2="76"/><line x1="486" y1="76" x2="502" y2="76"/></g>
+<line x1="40" y1="116" x2="632" y2="116" stroke="#9aa3ad" stroke-width="1.5" stroke-dasharray="6 6" marker-end="url(#ar)"><animate attributeName="stroke-dashoffset" from="12" to="0" dur="0.8s" repeatCount="indefinite"/></line>
+<circle r="4" cy="116" fill="#6b7280"><animate attributeName="cx" values="40;628" dur="4s" begin="0s" repeatCount="indefinite"/></circle>
+<circle r="4" cy="116" fill="#6b7280"><animate attributeName="cx" values="40;628" dur="4s" begin="1.3s" repeatCount="indefinite"/></circle>
+<circle r="4" cy="116" fill="#6b7280"><animate attributeName="cx" values="40;628" dur="4s" begin="2.6s" repeatCount="indefinite"/></circle>
+<text class="ts" x="340" y="140" text-anchor="middle">concentration sits upstream (bulk / GMP, China) — a resilience issue, not a misuse chokepoint</text>
+<text class="ts" x="340" y="160" text-anchor="middle">two lenses — green: misuse-control risk · amber: supply-resilience risk</text>
+<rect x="40" y="172" width="290" height="150" rx="12" fill="#e6f4ea" stroke="#86c99a"/>
+<text class="th gt" x="54" y="198">As a control lever: Low</text>
+<text class="ts gt" x="54" y="224">– commodity, ~12 suppliers</text>
+<text class="ts gt" x="54" y="246">– substitutable: reagent + solvent</text>
+<text class="ts gt" x="54" y="268">– legitimate demand swamps signal</text>
+<text class="ts gt" x="54" y="290">– reagent not itself hazardous</text>
+<text class="ts gt" x="54" y="312">Sandahl 2021 · Kim 2024</text>
+<rect x="350" y="172" width="290" height="150" rx="12" fill="#fdf3e0" stroke="#e6b566"/>
+<text class="th at" x="364" y="198">As resilience: Medium</text>
+<text class="ts at" x="364" y="224">– bulk / GMP supply concentrated</text>
+<text class="ts at" x="364" y="246">– China role: Hongene 58 t/yr</text>
+<text class="ts at" x="364" y="268">– BIOSECURE Act §851 (Dec 2025)</text>
+<text class="ts at" x="364" y="290">– economic security, not misuse</text>
+<text class="ts at" x="364" y="312">upstream, bulk/GMP channel</text>
+<rect x="40" y="338" width="600" height="42" rx="12" fill="#f5f6f8" stroke="#c7ced6"/>
+<text class="th" x="340" y="364" text-anchor="middle">Control belongs at the sequence and the device — not the reagent.</text>
+</svg>

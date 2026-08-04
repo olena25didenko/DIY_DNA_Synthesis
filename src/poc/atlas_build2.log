@@ -1,0 +1,88 @@
+  masaki    DRR357663        column_phosphoramidite Ac2O_standard
+  masaki    DRR357664        column_phosphoramidite Ac2O_standard
+  masaki    DRR357665        column_phosphoramidite Ac2O_standard
+  masaki    DRR357666        column_phosphoramidite Ac2O_standard
+  masaki    DRR357667        column_phosphoramidite Ac2O_standard
+  masaki    DRR357668        column_phosphoramidite Ac2O_standard
+  masaki    DRR357669        column_phosphoramidite Ac2O_standard
+  masaki    DRR357670        column_phosphoramidite Ac2O_standard
+  masaki    DRR357671        column_phosphoramidite Ac2O_standard
+  masaki    DRR357672        column_phosphoramidite Ac2O_standard
+  masaki    DRR357673        column_phosphoramidite Ac2O_standard
+  masaki    DRR357674        column_phosphoramidite Ac2O_standard
+  masaki    DRR357675        column_phosphoramidite Ac2O_standard
+  masaki    DRR357676        column_phosphoramidite Ac2O_standard
+  masaki    DRR357677        column_phosphoramidite Ac2O_standard
+  masaki    DRR357678        column_phosphoramidite Ac2O_lutidine
+  masaki    DRR357679        column_phosphoramidite Ac2O_lutidine
+  masaki    DRR357680        column_phosphoramidite Ac2O_lutidine
+  masaki    DRR357681        column_phosphoramidite Pac2O
+  masaki    DRR357682        column_phosphoramidite Pac2O
+  masaki    DRR357683        column_phosphoramidite Pac2O
+  masaki    DRR357684        column_phosphoramidite Ac2O_standard
+  masaki    DRR357685        column_phosphoramidite Ac2O_standard
+  masaki    DRR357686        column_phosphoramidite Ac2O_standard
+  masaki    DRR357687        column_phosphoramidite Ac2O_standard
+  masaki    DRR357688        column_phosphoramidite Ac2O_standard
+  masaki    DRR357689        column_phosphoramidite Ac2O_standard
+  masaki    DRR357690        column_phosphoramidite Ac2O_standard
+  masaki    DRR357691        column_phosphoramidite Ac2O_standard
+  masaki    DRR357692        column_phosphoramidite Ac2O_standard
+  masaki    DRR357693        column_phosphoramidite Pac2O/7-deaza-dG
+  masaki    DRR357694        column_phosphoramidite Pac2O/7-deaza-dG
+  masaki    DRR357695        column_phosphoramidite Pac2O/8-aza-7-deaza-dG
+  masaki    DRR357696        column_phosphoramidite Pac2O/8-aza-7-deaza-dG
+  filges    SRR14416331      column_phosphoramidite IDT
+  filges    SRR14416332      column_phosphoramidite IDT
+  filges    SRR14416333      column_phosphoramidite IDT
+  filges    SRR14416334      column_phosphoramidite IDT
+  filges    SRR14416335      column_phosphoramidite BioSearch
+  filges    SRR14416336      column_phosphoramidite IDT
+  filges    SRR14416337      column_phosphoramidite IDT
+  filges    SRR14416338      column_phosphoramidite IDT
+  filges    SRR14416339      column_phosphoramidite IDT
+  filges    SRR14416340      column_phosphoramidite IDT
+  filges    SRR14416378      column_phosphoramidite Sigma
+  filges    SRR14416379      column_phosphoramidite Sigma
+  filges    SRR14416380      column_phosphoramidite Sigma
+  filges    SRR14416381      column_phosphoramidite Sigma
+  filges    SRR14416382      column_phosphoramidite Sigma
+  filges    SRR14416383      column_phosphoramidite Sigma
+  filges    SRR14416384      column_phosphoramidite Sigma
+  filges    SRR14416385      column_phosphoramidite Sigma
+  filges    SRR14416386      column_phosphoramidite Sigma
+  filges    SRR14416388      column_phosphoramidite Eurofins
+  filges    SRR14416399      column_phosphoramidite Eurofins
+  filges    SRR14416410      column_phosphoramidite Eurofins
+  filges    SRR14416416      column_phosphoramidite BioSearch
+  filges    SRR14416417      column_phosphoramidite BioSearch
+  SKIP lietard_capped (no features)
+  SKIP lietard_space (no features)
+  SKIP lietard_normal (no features)
+  gimpel    ERR12033803      array_electrochem      electrochem
+  gimpel    ERR12033805      array_deposition       deposition
+  gimpel    ERR12033807      array_electrochem      electrochem
+  gimpel    ERR12033809      array_deposition       deposition
+
+WROTE /sessions/compassionate-beautiful-meitner/mnt/DIY_DNA_Synthesis/synthesis-screening-project/src/poc/reference_library/reference_atlas.csv  (62 runs x 16 features)
+
+class x study composition:
+ route_class             study 
+array_deposition        gimpel     2
+array_electrochem       gimpel     2
+column_phosphoramidite  filges    24
+                        masaki    34
+
+sublabel composition:
+ route_class             sublabel              
+array_deposition        deposition                 2
+array_electrochem       electrochem                2
+column_phosphoramidite  Ac2O_lutidine              3
+                        Ac2O_standard             24
+                        BioSearch                  3
+                        Eurofins                   3
+                        IDT                        9
+                        Pac2O                      3
+                        Pac2O/7-deaza-dG           2
+                        Pac2O/8-aza-7-deaza-dG     2
+                        Sigma                      9

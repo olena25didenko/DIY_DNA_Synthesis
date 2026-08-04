@@ -1,0 +1,4 @@
+>C1_insert_48mer  Masaki 2022 (Sci Rep 12:12095), Fig 2 — synthesized region; error-parse target
+CGTCATGACGTCATGATGCAGCACTGCAGCACGTAGTACTGTAGTACT
+>C1_amplicon_85mer  full amplicon = i5-adapter + 48mer insert + i7-adapter (adapters BBDuk-trimmed)
+ACGACGCTCTTCCGATCTCGTCATGACGTCATGATGCAGCACTGCAGCACGTAGTACTGTAGTACTAGATCGGAAGAGCACACGT
