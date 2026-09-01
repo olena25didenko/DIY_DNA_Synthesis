@@ -1,69 +1,91 @@
-# Synthesis Screening TRI Project
+# DIY and benchtop DNA synthesis: a biosecurity assessment and a calibrated route-exclusion method
 
-DIY DNA synthesis under governance transitions — four corrected chapters, a
-standardized figure set, and a working proof-of-concept for synthesis-method
-attribution. Everything here is detection/attribution and governance analysis:
-no synthesis, no evasion guidance.
+**Author:** Olena Didenko  
+**Preprint:** pending IBBIS infohazard review  
+**Zenodo deposit (draft):** https://doi.org/10.5281/zenodo.22014124
 
-## What's in here
+---
+
+## What this repository contains
+
+Code and data supporting the synthesis-route attribution analysis in the paper.
+
+The paper assesses eight synthesis routes across technical and governance dimensions, evaluates whether input controls and jurisdictional mandates are durable, and develops a method for inferring synthesis process from the error signature of sequenced product — attribution after the fact rather than prevention at the point of order.
+
+This repository holds the proof-of-concept implementation of that attribution method and the reference data required to reproduce it.
+
+---
+
+## Repository structure
+
 ```
-Chapter1_TRI.md                 Regime-conditional Technology Readiness Index
-Chapter2_ControlAssessment.md   Control-point robustness & policy durability
-Chapter3_CostTrajectories.md    Cost/accessibility forecasts (with uncertainty)
-Chapter4_ForensicFramework.md   Synthesis-method attribution + the PoC
-figures/                        All 15 figures (PNG), one shared style
-requirements.txt                Python packages
+data/               Reference sequences and metadata for the four co-processed datasets
+figures/            Article figures (PNG)
 src/
-  figstyle.py                   Shared figure style (fixed palette + captions)
-  gen_ch1_figs.py .. gen_ch4    Reproduce each chapter's figures
-  poc/
-    synth_forensics.py          Phenotypes + simulator + features + LR/tiers
-    run_poc.py                  Run the demo (classify, calibrate, exclude, Fig 4.6)
-    extract_features.py         Scaffold for REAL sequencing data
-    README.md                   PoC overview
-    RUNBOOK.md                  Full step-by-step: demo + real data
+  poc/              Attribution analysis: error calling, feature extraction, classifier training,
+                    leave-one-run-out validation, calibration, and reference atlas build
+  figstyle.py       Shared figure style module
+  gen_fig1_7.py     Cost-per-base trajectory figure
+requirements.txt    Python dependencies
 ```
 
-## Read the chapters
-Open any `ChapterX_*.md` in VS Code and press **Ctrl+Shift+V** (Cmd+Shift+V on Mac)
-for the Markdown preview. Figures render inline because the paths are relative.
+---
 
-## Run the proof-of-concept in VS Code
+## Datasets
 
-1. **Open the folder.** VS Code → File → Open Folder → select this project folder.
-2. **Install the Python extension** (Extensions panel, search "Python", by Microsoft).
-   If you don't have Python itself, get it from https://www.python.org/downloads/
-   and tick **"Add python.exe to PATH"** during install.
-3. **Pick the interpreter.** Ctrl+Shift+P → "Python: Select Interpreter" → choose
-   your Python 3.
-4. **Open a terminal.** Terminal → New Terminal.
-5. **Install the packages** (from the project root):
-   ```
-   python -m pip install -r requirements.txt
-   ```
-   (On Windows, if `python` isn't found, use `py` instead: `py -m pip install -r requirements.txt`.)
-6. **Run the demo:**
-   ```
-   python src/poc/run_poc.py
-   ```
-   or open `src/poc/run_poc.py` in the editor and click the ▶ Run button (top-right).
-   It prints the metrics and writes `src/poc/figures/fig4_6_poc.png`.
+The four co-processed datasets are public:
 
-### What the demo shows
-Leave-batch-out classification of four synthesis-method classes, calibration (ECE),
-an exclusion (rules-out-commercial) likelihood ratio, a DIY-vs-commercial noise
-sweep, and a label-shuffle control. The input error profiles are **simulated from
-published per-method values** (Masaki/Filges/Lietard/Palluk); the pipeline is real
-and runs unchanged on real data. See `src/poc/RUNBOOK.md` for how to swap in real
-deposited sequencing data (Filges SRA PRJNA727098, Masaki DDBJ DRA013805, etc.).
+| Dataset | Accession | Synthesis process |
+|---------|-----------|-------------------|
+| Filges et al. | PRJNA727098 | Column (commercial) |
+| Masaki et al. | DRA013805 | Photolithographic |
+| Lietard et al. | PRJEB43002 | Electrochemical array |
+| Gimpel et al. | PRJEB65931 | Inkjet array |
 
-### Regenerate the figures (optional)
-Each `src/gen_chN_figs.py` writes that chapter's PNGs to a local `figures/` folder
-next to the script. Run e.g. `python src/gen_ch1_figs.py` (needs `src/figstyle.py`
-alongside, which it is).
+Acquisition scripts for each are in `src/poc/acquisition/`. The Filges dataset is large; `data/download_filges_subset.sh` downloads only the subset used in the paper.
 
-## Notes
-- Detection/attribution and governance analysis only.
-- The OpenIDS DIY error phenotype is a *prediction* (suppressed G→A + elevated n−1
-  deletions from capping omission), to be tested against real OpenIDS product data.
-- Report calibrated likelihood ratios and ranges, not point calls.
+An external held-out check used the Yeom SHIFT dataset, provided directly by the authors. It is not publicly available and is not redistributed here.
+
+---
+
+## Reproducing the attribution results
+
+See `src/poc/README.md` for the full runbook.
+
+The short version:
+
+```bash
+pip install -r requirements.txt
+
+# 1. Acquire raw reads (or use pre-built atlas)
+bash src/poc/acquisition/<dataset>_acquire.sh
+
+# 2. Call errors against reference
+python src/poc/call_errors.py
+
+# 3. Extract 16-feature error vector per run
+python src/poc/extract_features.py
+
+# 4. Build reference atlas
+python src/poc/build_reference_atlas.py
+
+# 5. Run leave-one-run-out classifier
+python src/poc/train_multiclass_real.py
+
+# 6. Calibration analysis
+python src/poc/calibration_lr.py
+```
+
+Pre-built outputs (reference atlas, classifier results, calibration results) are in `src/poc/reference_library/`.
+
+---
+
+## Status
+
+The Zenodo deposit and this repository are in draft/private status pending IBBIS infohazard review. The record will be made public once IBBIS clears the manuscript.
+
+---
+
+## Citation
+
+Didenko, O. (2026). Do-it-yourself and benchtop DNA synthesis: a biosecurity assessment and a calibrated route-exclusion method. Zenodo. https://doi.org/10.5281/zenodo.22014124
